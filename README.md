@@ -2,7 +2,7 @@
 Create infinitive Figma page for free
 
 ## Demo image
-■ [Demo](https://raw.githubusercontent.com/web3senior/figma-create-page/master/demo.png)
+![FFP](https://raw.githubusercontent.com/web3senior/figma-create-page/master/demo.png "Demo")
 
 ## Why this plugin
 A simple and quick way to create page on Figma. On some projects we need to have more than 3 pages, however with this plugin it's possible to create many pages.
