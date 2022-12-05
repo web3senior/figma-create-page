@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FFP</title>
+  <style>
+    :root {
+      --primary-color: #A259FF;
+      --secondary-color: #F24E1E;
+      --tertiary-color: #FFC700;
+      --black: #212428;
+      --white: #fff;
+    }
+
+    body {
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 10px 20px;
+      gap: 22px;
+      grid-template-rows: 40px 1fr 40px;
+      background-color: var(--primary-color);
+      font-family: 'Inter', Courier, monospace;
+
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    header {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 31px;
+      display: flex;
+      align-items: center;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 4px;
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+      height: 50px;
+      font-size: 28px;
+      padding-left: 1rem;
+      background-color: var(--secondary-color);
+      border: 2px solid var(--black)
+    }
+
+    label {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: uppercase;
+      color: var(--white)
+    }
+
+    .action {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 12px;
+      align-items: stretch;
+      flex: 100%;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    button {
+      width: 100%;
+      border: 2px solid #212428;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 12px;
+      gap: 8px;
+      flex: 100%;
+      height: 50px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      cursor: pointer;
+    }
+
+    button:first-child {
+      background-color: var(--tertiary-color);
+    }
+
+    button:last-child {
+      background: rgba(254, 123, 123, 0.11);
+    }
+
+    #heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      animation: heartbeat 1s infinite;
+      margin: 0 auto
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(.75);
+      }
+
+      20% {
+        transform: scale(1);
+      }
+
+      40% {
+        transform: scale(.75);
+      }
+
+      60% {
+        transform: scale(1);
+      }
+
+      80% {
+        transform: scale(.75);
+      }
+
+      100% {
+        transform: scale(.75);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    Page 1 Page 2 Page 3 Page 4 Page 5 Page ...
+  </header>
+
+  <main>
+
+    <label>Count of page:</label>
+
+    <input type="number" min="1" max="8" autofocus value="1"/>
+    <div class="action">
+      <button class="primary" id="create">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M22.619 6.24597L21.7118 4.29704L19.7292 3.38979L21.7118 2.48253L22.619 0.5L23.5263 2.48253L25.5088 3.38979L23.5263 4.29704L22.619 6.24597ZM7.49804 6.24597L6.59079 4.29704L4.60826 3.38979L6.59079 2.48253L7.49804 0.5L8.4053 2.48253L10.3878 3.38979L8.4053 4.29704L7.49804 6.24597ZM22.619 21.4005L21.7118 19.418L19.7292 18.5108L21.7118 17.6035L22.619 15.621L23.5263 17.6035L25.5088 18.5108L23.5263 19.418L22.619 21.4005ZM2.86095 25.1976L0.811216 23.1479C0.609603 22.9462 0.503196 22.711 0.491996 22.4422C0.480795 22.1734 0.587202 21.9382 0.811216 21.7366L14.4537 8.12769C14.6777 7.92608 14.9353 7.82527 15.2265 7.82527C15.5178 7.82527 15.753 7.92608 15.9322 8.12769L17.9483 10.1102C18.1499 10.3118 18.2507 10.5526 18.2507 10.8327C18.2507 11.1127 18.1499 11.3647 17.9483 11.5887L4.27224 25.1976C4.07062 25.3992 3.83541 25.5 3.56659 25.5C3.29778 25.5 3.06256 25.3992 2.86095 25.1976V25.1976ZM3.49939 24.4247L13.58 14.3777L11.5975 12.3952L1.55046 22.4758L3.49939 24.4247Z"
+            fill="black" />
+        </svg>
+        <span>Create</span>
+      </button>
+      <button class="primary" id="cancel">
+        <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M7.39583 18.8681L12.5 13.7639L17.6042 18.8681L18.3681 18.1042L13.2639 13L18.3681 7.89583L17.6042 7.13194L12.5 12.2361L7.39583 7.13194L6.63194 7.89583L11.7361 13L6.63194 18.1042L7.39583 18.8681ZM12.5 25.5C10.787 25.5 9.17245 25.1701 7.65625 24.5104C6.14005 23.8507 4.81481 22.9537 3.68056 21.8194C2.5463 20.6852 1.64931 19.3657 0.989583 17.8611C0.329861 16.3565 0 14.7361 0 13C0 11.2639 0.329861 9.63773 0.989583 8.12153C1.64931 6.60532 2.5463 5.28588 3.68056 4.16319C4.81481 3.04051 6.13426 2.14931 7.63889 1.48958C9.14352 0.829861 10.7639 0.5 12.5 0.5C14.2361 0.5 15.8623 0.829861 17.3785 1.48958C18.8947 2.14931 20.2141 3.04051 21.3368 4.16319C22.4595 5.28588 23.3507 6.60532 24.0104 8.12153C24.6701 9.63773 25 11.2639 25 13C25 14.713 24.6701 16.3275 24.0104 17.8437C23.3507 19.36 22.4595 20.6852 21.3368 21.8194C20.2141 22.9537 18.8947 23.8507 17.3785 24.5104C15.8623 25.1701 14.2361 25.5 12.5 25.5Z"
+            fill="black" />
+        </svg>
+        <span>Close</span>
+      </button>
+    </div>
+    </div>
+    </div>
+  </main>
+
+  <footer>
+    <svg id="heart" width="38" height="54" viewBox="0 0 38 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M36.5584 9.66665C36.5584 14.4531 32.6783 18.3333 27.8918 18.3333H19V1H27.8918C32.6783 1 36.5584 4.88019 36.5584 9.66665Z"
+        stroke="white" stroke-width="2" />
+      <path
+        d="M1.44156 9.66665C1.44156 14.4531 5.32175 18.3333 10.1082 18.3333H19V1H10.1082C5.32175 1 1.44156 4.88019 1.44156 9.66665Z"
+        stroke="white" stroke-width="2" />
+      <path
+        d="M1.44156 27.0002C1.44156 31.7867 5.32175 35.6669 10.1082 35.6669H19V18.3336H10.1082C5.32175 18.3336 1.44156 22.2137 1.44156 27.0002Z"
+        stroke="white" stroke-width="2" />
+      <path
+        d="M1.44156 44.3333C1.44156 49.1198 5.37767 53 10.1641 53C15.0128 53 19 49.0694 19 44.2208V35.6667H10.1082C5.32175 35.6667 1.44156 39.5469 1.44156 44.3333Z"
+        stroke="white" stroke-width="2" />
+      <path
+        d="M19 27.0002C19 31.7867 22.8802 35.6669 27.6667 35.6669H27.8918C32.6783 35.6669 36.5584 31.7867 36.5584 27.0002C36.5584 22.2137 32.6783 18.3336 27.8918 18.3336H27.6667C22.8802 18.3336 19 22.2137 19 27.0002Z"
+        stroke="white" stroke-width="2" />
+    </svg>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      console.clear()
+      console.log('%c I ♥ Figma', 'font-size:25px')
+
+      // Create page on Figma
+      const createPage = () => {
+        console.log('Start')
+        parent.postMessage({ pluginMessage: { type: 'create-page', count:document.querySelector('input[type="number"]').value } }, '*')
+      }
+
+      // Close the plugin
+      const closePlugin = () => {
+        parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+      }
+
+      // Listeners
+      document.querySelector('#create').addEventListener('click', createPage)
+      document.querySelector('#cancel').addEventListener('click', closePlugin)
+
+
+      // Listening to Figma document
+      onmessage = (event) => {
+        console.log("got this from the plugin code", event.data.pluginMessage)
+        // event.data.pluginMessage.forEach(e => {
+        // });
+      }
+    })
+  </script>
+</body>
+
+</html>

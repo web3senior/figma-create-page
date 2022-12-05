@@ -1,0 +1,19 @@
+{
+  "name": "shotstack",
+  "version": "1.0.0",
+  "description": "Convert Figma prototype to a presentation video by using Figma plugin & SHOTSTACK API",
+  "main": "code.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "npm run build -- --watch"
+  },
+  "author": "Amir Rahimi",
+  "license": "MIT",
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.56.0",
+    "typescript": "*"
+  },
+  "editorType": [
+    "figma"
+  ]
+}
